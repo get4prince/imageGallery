@@ -2,6 +2,7 @@ import React , { Component } from "react"
 
 import "./../asserts/bootstrap.min.css";
 
+import Layout from "../components/layout"
 import Gallery from "../components/gallery"
 
 var arr = [
@@ -29,18 +30,25 @@ var arr = [
   'https://picsum.photos/id/371/600/600'
 ];
 
-class IndexPage extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      images: arr
+const IndexPage = (data)=>(
+    <Gallery data={data}/>
+)
+
+export default IndexPage;
+
+export const query = graphql`
+  {
+allPixabayPhoto(limit: 30) {
+  edges {
+    node {
+      largeImageURL
+      pageURL
+      tags
+      user
+      webformatURL
+      id
     }
   }
-
-  render(){
-    var data = this.state.images;
-    return <Gallery data={data} />
-  }
 }
-
-export default IndexPage
+}
+`

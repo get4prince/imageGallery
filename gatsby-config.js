@@ -7,10 +7,10 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-source-pixabay`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        key: "12680629-e4d7d125cac81fda2ff9d4899",
+        q: "building",
       },
     },
     `gatsby-transformer-sharp`,
