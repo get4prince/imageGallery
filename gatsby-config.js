@@ -10,7 +10,7 @@ module.exports = {
       resolve: `gatsby-source-pixabay`,
       options: {
         key: "12680629-e4d7d125cac81fda2ff9d4899",
-        q: "building",
+        q: "tech",
       },
     },
     `gatsby-transformer-sharp`,

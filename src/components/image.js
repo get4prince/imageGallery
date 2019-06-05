@@ -1,32 +1,30 @@
 import React, { Component } from "react"
 import { Modal, ModalHeader } from "reactstrap"
 
-class ImageModal extends Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    const externalCloseBtn = (
+// class ImageModal extends Component {
+function ImageModal(props) {
+  const externalCloseBtn = () => {
+    return (
       <button
         className="close"
         style={{ position: "absolute", top: "15px", right: "15px" }}
-        onClick={this.props.toggle}
+        onClick={props.toggle}
       >
         &times;
       </button>
     )
-    return (
-      <Modal
-        size="lg"
-        className="modal-dialog-centered "
-        isOpen={this.props.modal}
-        toggle={this.props.toggle}
-        external={externalCloseBtn}
-      >
-        <img style={{ margin: "0px" }} src={this.props.url} />
-      </Modal>
-    )
   }
+  return (
+    <Modal
+      size="lg"
+      className="modal-dialog-centered "
+      isOpen={props.modal}
+      toggle={props.toggle}
+      external={externalCloseBtn()}
+    >
+      <img style={{ margin: "0px" }} src={props.url} />
+    </Modal>
+  )
 }
 
 export default ImageModal
